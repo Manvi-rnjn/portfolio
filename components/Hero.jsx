@@ -70,7 +70,7 @@ export default function Hero() {
           className="font-display text-xl md:text-2xl text-soft font-medium mb-4 opacity-0 animate-fade-up"
           style={{ animationDelay: "300ms", animationFillMode: "forwards" }}
         >
-          Full-Stack Developer &amp; Problem Solver
+          CS Student Building Real-World Web Applications
         </p>
 
         {/* Short intro */}
