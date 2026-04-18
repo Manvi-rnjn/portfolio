@@ -59,13 +59,13 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA Button */}
+        {/* Desktop CTA Button
         <a
           href="mailto:manvi.18259@stu.upes.ac.in"
           className="hidden md:inline-flex items-center gap-2 text-sm font-body font-medium px-4 py-2 rounded-lg border border-accent/40 text-accent hover:bg-accent/10 transition-all duration-200"
         >
           Hire Me
-        </a>
+        </a> */}
 
         {/* Mobile Hamburger */}
         <button

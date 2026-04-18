@@ -24,13 +24,13 @@ const CONTACT_LINKS = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/manvi-ranjan", // Replace with your actual LinkedIn
-    href: "https://linkedin.com/in/manvi-ranjan",
+    href: "https://www.linkedin.com/in/manvi-ranjan-b33589319/",
   },
   {
     icon: Github,
     label: "GitHub",
     value: "github.com/manviranjan", // Replace with your actual GitHub
-    href: "https://github.com/manviranjan",
+    href: "https://github.com/Manvi-rnjn",
   },
   {
     icon: MapPin,

@@ -17,8 +17,8 @@ const PROJECTS = [
     description:
       "A full-stack e-learning platform built for aviation students. Features user authentication via Clerk, payment integration with Razorpay, course management backed by Supabase, and deployed to production on Vercel. Handles real user sessions and transactions.",
     tech: ["Node.js", "Supabase", "Clerk", "Razorpay", "Vercel", "JavaScript"],
-    github: "#",    // Replace with your GitHub repo URL
-    demo: "#",      // Replace with your live site URL
+    github: "https://github.com/Manvi-rnjn/aeropath",    // Replace with your GitHub repo URL
+    demo: "https://aeropath-steel.vercel.app/",      // Replace with your live site URL
     featured: true, // Featured projects get a slightly larger card treatment
   },
   {

@@ -6,7 +6,7 @@
 const STATS = [
   { value: "3+", label: "Projects Built" },
   { value: "5+", label: "Technologies" },
-  { value: "2025", label: "Graduating" },
+  { value: "2028", label: "Graduating" },
   { value: "∞", label: "Curiosity" },
 ];
 
@@ -36,15 +36,15 @@ export default function About() {
               <span className="text-accent font-medium">
                 B.Tech Computer Science student
               </span>{" "}
-              with hands-on experience building and deploying full-stack web
-              applications. I enjoy turning ideas into working products — from
-              database design to frontend polish.
+              exploring web development and secure systems. 
+              I have built and deployed projects using Node.js, working with 
+              authentication, databases, and payment integration.
             </p>
             <p className="font-body text-soft leading-relaxed">
-              My journey started with curiosity about how websites actually work
-              under the hood. That curiosity led me to build real projects —
-              including a production-ready aviation learning platform with
-              authentication, payments, and cloud deployment.
+              My journey started with curiosity, about how websites actually work under the hood.
+              I am actively learning and improving my skills through coursework and projects, 
+              with a focus on understanding application 
+              development step by step.
             </p>
             <p className="font-body text-soft leading-relaxed">
               Beyond web development, I have a keen interest in cybersecurity
@@ -52,9 +52,8 @@ export default function About() {
               how systems can be hardened against attacks.
             </p>
 
-            {/* Résumé download link — replace '#' with your actual resume PDF path */}
             <a
-              href="#"
+              href="/Manvi_Ranjan_Resume.pdf"
               className="inline-flex items-center gap-2 text-sm font-body font-medium text-accent border border-accent/30 px-5 py-2.5 rounded-lg hover:bg-accent/10 transition-all duration-200 mt-2"
             >
               Download Résumé

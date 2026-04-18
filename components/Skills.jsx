@@ -37,7 +37,7 @@ const SKILL_GROUPS = [
     color: "from-orange-500/20 to-orange-500/5",
     borderColor: "border-orange-500/20",
     accentColor: "text-orange-400",
-    skills: ["Git", "GitHub", "Vercel", "VS Code", "Postman"],
+    skills: ["Git", "GitHub", "Vercel", "VS Code"],
   },
   {
     category: "Data Science",
@@ -45,7 +45,7 @@ const SKILL_GROUPS = [
     color: "from-pink-500/20 to-pink-500/5",
     borderColor: "border-pink-500/20",
     accentColor: "text-pink-400",
-    skills: ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Seaborn"],
+    skills: ["Pandas", "NumPy", "Matplotlib"],
   },
   {
     category: "Cybersecurity",
