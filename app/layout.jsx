@@ -9,7 +9,7 @@ import "./globals.css";
 
 // Metadata is Next.js's built-in way to handle <head> tags (title, description, og:image etc.)
 export const metadata = {
-  title: "Manvi Ranjan — Full-Stack Developer",
+  title: "Manvi Ranjan | Cybersecurity Student",
   description:
     "B.Tech CS student specializing in Node.js, web applications, and software development. View my projects and get in touch.",
   keywords: ["Manvi Ranjan", "portfolio", "full stack developer", "Node.js", "Next.js"],
