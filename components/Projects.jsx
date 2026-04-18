@@ -15,7 +15,7 @@ const PROJECTS = [
     id: "01",
     title: "Aviation Learning Platform",
     description:
-      "A full-stack e-learning platform built for aviation students. Features user authentication via Clerk, payment integration with Razorpay, course management backed by Supabase, and deployed to production on Vercel. Handles real user sessions and transactions.",
+      "A full-stack e-learning platform built for aviation students. Features user authentication via Clerk, payment integration with Razorpay, course management backed by Supabase, and deployed to production on Vercel.",
     tech: ["Node.js", "Supabase", "Clerk", "Razorpay", "Vercel", "JavaScript"],
     github: "https://github.com/Manvi-rnjn/aeropath",    // Replace with your GitHub repo URL
     demo: "https://aeropath-steel.vercel.app/",      // Replace with your live site URL
@@ -33,10 +33,10 @@ const PROJECTS = [
   },
   {
     id: "03",
-    title: "Movie Recommendation System",
+    title: "Confidential Genome Sequencing System",
     description:
-      "A content-based filtering system that recommends movies based on user preferences and similarity scores. Built with Python using cosine similarity on TF-IDF vectors derived from movie metadata.",
-    tech: ["Python", "Scikit-learn", "Pandas", "TF-IDF", "Cosine Similarity"],
+      "A software engineering project focused on secure handling of genomic data, exploring privacy-preserving techniques and system design using SDLC concepts.",
+    tech: ["Java", "SDLC", "Data Security", "Multiparty Computation", "Functional Encryption"],
     github: "#",
     demo: null,
     featured: false,
@@ -142,7 +142,7 @@ export default function Projects() {
         {/* GitHub CTA */}
         <div className="mt-12 text-center">
           <a
-            href="https://github.com"  // Replace with your GitHub profile URL
+            href="https://github.com/Manvi-rnjn"  // Replace with your GitHub profile URL
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-body text-sm text-soft hover:text-accent transition-colors border border-border hover:border-accent/30 px-6 py-3 rounded-lg"
