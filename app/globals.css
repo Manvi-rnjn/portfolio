@@ -1,0 +1,88 @@
+/* ─── Global Styles ─────────────────────────────────────────────────────── */
+/* Import Google Fonts — Syne for headings, DM Sans for body, JetBrains Mono for code */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Resets ────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    /* Smooth scroll for anchor links (e.g., #projects) */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #e2e2f0;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    /* Subtle noise texture overlay via SVG data URI */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* Smooth scrollbar on webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e1e2e;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6ee7b7;
+  }
+
+  /* Selection highlight color */
+  ::selection {
+    background: #6ee7b740;
+    color: #6ee7b7;
+  }
+}
+
+/* ─── Reusable Utility Classes ───────────────────────────────────────────── */
+@layer utilities {
+  /* Animated gradient text — used on name/heading */
+  .gradient-text {
+    background: linear-gradient(135deg, #6ee7b7 0%, #34d399 40%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect for accent elements */
+  .accent-glow {
+    box-shadow: 0 0 30px rgba(110, 231, 183, 0.15);
+  }
+
+  /* Standard card style — reuse across components */
+  .card {
+    background: #111118;
+    border: 1px solid #1e1e2e;
+    border-radius: 12px;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: #6ee7b740;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Delay helpers for staggered animations */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
