@@ -25,9 +25,9 @@ const PROJECTS = [
     id: "02",
     title: "Student Performance Analyzer",
     description:
-      "A Python-based data analysis tool that processes student grade data to identify performance patterns and predict outcomes. Uses pandas for data manipulation and matplotlib/seaborn to generate insightful visual reports.",
+      "A Python-based data analysis tool that processes student grade data to identify performance patterns and predict outcomes. Uses pandas for data manipulation and matplotlib to generate insightful visual reports.",
     tech: ["Python", "Pandas", "Matplotlib", "NumPy"],
-    github: "https://github.com/Manvi-rnjn/student-performance-analyzer",
+    github: "https://github.com/Manvi-rnjn/Student-Performance-Analyzer",
     demo: null, // Set to null if no live demo exists
     featured: false,
   },
