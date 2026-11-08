@@ -1,178 +1,95 @@
-# Manvi Ranjan — Portfolio Website
+# Manvi Ranjan: Portfolio
 
-A clean, modern, dark-themed personal portfolio built with **Next.js 14** and **Tailwind CSS**.
+A personal portfolio built as a fictional "system" you break into. Visitors get a short intro, a scroll-driven hacking simulation, and then land on a desktop where each folder opens a full-page view with a hand-drawn scene and the text beside it.
 
----
+Live site: https://manvi-rnjn-portfolio.vercel.app/
 
-## Folder Structure
+## The idea
+
+Most portfolios are a long scrolling page of cards. This one is meant to feel like exploring something: the content is the same (about, experience, projects, skills, resume, contact), but it is revealed through a short story. The simulation is entirely fictional and uses no real systems.
+
+## How it works
+
+1. **Intro.** A black screen fades in a single question. Yes starts the experience. A Skip intro button is always available.
+2. **Simulation.** A centred terminal and a green progress bar are driven by scroll position. Log lines appear at set points until the bar reaches 100%.
+3. **Desktop.** Folders for About, Experience, Projects, Skills, Resume and Contact.
+4. **Folder view.** Each folder takes the full page: an illustration on the left that wipes in like it is being drawn, then a single glowing accent that animates, with the text on the right. Project folders open file pages with a Back button.
+
+## Tech stack
+
+Next.js (App Router), React, plain CSS. Tailwind is installed and its directives are loaded, but all custom styling lives in `globals.css`. No animation or UI libraries are used.
+
+## Project structure
 
 ```
 portfolio/
-├── app/                    # Next.js App Router (pages + layout)
-│   ├── globals.css         # Global styles, custom CSS classes, Google Fonts import
-│   ├── layout.jsx          # Root layout — wraps every page (HTML head, metadata)
-│   └── page.jsx            # Main page — assembles all section components
-│
-├── components/             # Reusable UI components (one file per section)
-│   ├── Navbar.jsx          # Sticky top navigation with mobile hamburger
-│   ├── Hero.jsx            # Landing section with animated background
-│   ├── About.jsx           # About me + stat cards
-│   ├── Projects.jsx        # Project cards grid
-│   ├── Skills.jsx          # Skills grouped by category
-│   ├── Contact.jsx         # Contact info + form
-│   └── Footer.jsx          # Simple footer
-│
-├── public/                 # Static files (images, favicon, resume PDF)
-│   └── (add your photos/resume here)
-│
-├── .gitignore              # Files to exclude from git
-├── next.config.js          # Next.js configuration
-├── tailwind.config.js      # Tailwind theme (colors, fonts, animations)
-├── postcss.config.js       # PostCSS (required by Tailwind)
-├── vercel.json             # Vercel deployment settings
-└── package.json            # Dependencies and scripts
+├── app/
+│   ├── globals.css        All styles, including the doodle animations
+│   ├── layout.jsx         Root layout and page metadata
+│   └── page.jsx           Switches between intro, simulation and desktop
+├── components/
+│   ├── Intro.jsx          Black screen, slow fade, proceed prompt
+│   ├── HackSim.jsx        Scroll-driven terminal and green progress bar
+│   ├── Desktop.jsx        Folder icons and full-page folder views
+│   ├── Doodles.jsx        Draws an illustration and animates its accent
+│   └── content.js         All text on the site (edit here)
+└── public/
+    ├── doodles/           Illustrations, one drawing plus one accent per folder
+    └── Manvi_Ranjan_Resume.pdf
 ```
 
-**Key idea:** Each page section is its own file in `components/`. This makes it easy to edit one section without touching anything else.
+## Editing content
 
----
+All wording lives in `components/content.js`.
 
-## Running Locally
+- `FOLDERS` lists the desktop icons.
+- `WINDOWS` holds each folder's title, text and illustration name. A block is a heading (`h`), paragraph (`p`), small grey line (`meta`), bullet list (`li`), link (`a`) or file button (`file`).
+- `LINES` holds the log lines for the simulation.
 
-### Prerequisites
-- Node.js 18 or higher installed ([download here](https://nodejs.org))
-- A terminal (Command Prompt, PowerShell, or any Unix terminal)
+To add a new project, add an entry to `WINDOWS`, then add a `{ file: "...", label: "..." }` button to the `projects` entry. If it opens from a folder, also add it to the `PARENT` object in `Desktop.jsx` so Back works.
 
-### Steps
+## How the illustrations work
+
+Each folder has two images in `public/doodles/`:
+
+- `name.webp`: the white line drawing, revealed left to right with a CSS clip.
+- `name-accent.webp`: only the single coloured object (the bug, the token, the stamp mark and so on) on a transparent background. It fades in with a glow and then moves on its own.
+
+Splitting the layers is what lets one object glow and animate while the rest of the scene stays still. The motion for each accent is set in `Doodles.jsx` and defined in `globals.css`. The illustrations were generated with an AI image tool and then separated into layers.
+
+## Running locally
+
+Requires Node.js 18 or higher.
 
 ```bash
-# 1. Clone or download the project
-git clone https://github.com/YOUR_USERNAME/portfolio.git
-cd portfolio
-
-# 2. Install all dependencies (this reads package.json)
 npm install
-
-# 3. Start the development server
 npm run dev
-
-# 4. Open your browser and go to:
-#    http://localhost:3000
 ```
 
-The dev server has **hot reload** — save any file and the browser updates instantly.
-
-### Build for Production (optional, test before deploying)
+Open http://localhost:3000. To test a production build:
 
 ```bash
-npm run build   # Compiles the project
-npm run start   # Runs the compiled version at localhost:3000
+npm run build
+npm run start
 ```
 
----
+## Deploying
 
-## Deploying to Vercel (Free)
+The site is deployed on Vercel from this repository. Every push to the main branch triggers a new deployment.
 
-Vercel is made by the same team as Next.js — deploying is essentially one click.
+## Roadmap
 
-### Option A: Via Vercel Dashboard (Easiest)
+- [x] Intro, scroll-driven simulation and desktop
+- [x] Full-page folder views with animated illustrations
+- [x] Skip intro button
+- [ ] Replace the RateGuard illustration with a single-scene version that is easier to read
+- [ ] Name and resume button shown on the desktop
+- [ ] Writeups folder with short notes on web security topics
+- [ ] Plain scrollable view for quick scanning
+- [ ] Social preview image for link sharing
 
-1. Push your code to a GitHub repository
-2. Go to [vercel.com](https://vercel.com) and sign up with GitHub
-3. Click **"New Project"** → Import your GitHub repo
-4. Vercel auto-detects Next.js — click **Deploy**
-5. Your site will be live at `https://your-project-name.vercel.app` in ~2 minutes
+Tick items off as they are completed.
 
-Every time you push to GitHub, Vercel automatically re-deploys. 
+## Author
 
-### Option B: Via Vercel CLI
-
-```bash
-# Install the Vercel CLI globally
-npm install -g vercel
-
-# From inside your project folder:
-vercel
-
-# Follow the prompts — it asks a few questions, then deploys
-# Your URL is printed at the end
-```
-
----
-
-## Customization Guide
-
-### Change your name, email, links
-- **Name/intro:** `components/Hero.jsx` — edit the `<h1>` and `<p>` text
-- **About paragraph:** `components/About.jsx` — edit the `<p>` tags in the left column
-- **Email:** `components/Contact.jsx` → `CONTACT_LINKS` array
-- **LinkedIn/GitHub URLs:** `components/Contact.jsx` → `CONTACT_LINKS` array
-- **Navbar "Hire Me" email:** `components/Navbar.jsx` → the `<a href="mailto:...">` tag
-
-### Add a new project
-Open `components/Projects.jsx` and add a new object to the `PROJECTS` array:
-
-```js
-{
-  id: "04",
-  title: "Your New Project",
-  description: "What it does and how you built it.",
-  tech: ["React", "Firebase"],
-  github: "https://github.com/you/repo",
-  demo: "https://your-demo.com",
-  featured: false,
-}
-```
-
-### Add your resume PDF
-1. Add your PDF file to the `public/` folder as `resume.pdf`
-2. In `components/About.jsx`, change `href="#"` to `href="/resume.pdf"`
-
-### Change the accent color
-Open `tailwind.config.js` and find the `colors` section. Change the `accent` hex value:
-
-```js
-accent: "#6ee7b7",  // Change this to any color you like
-```
-
-### Enable the contact form
-1. Sign up at [formspree.io](https://formspree.io) (free)
-2. Create a form and copy your endpoint URL
-3. In `components/Contact.jsx`, uncomment the `fetch(...)` block and replace the URL
-
----
-
-## Design Decisions
-
-| Choice | Reason |
-|--------|--------|
-| Dark background `#0a0a0f` | Professional, reduces eye strain, popular in dev portfolios |
-| `Syne` font for headings | Geometric, modern — feels techy without being cold |
-| `DM Sans` for body text | Highly readable at small sizes |
-| `JetBrains Mono` for labels | Code-native feel, consistent with developer aesthetic |
-| Emerald green accent `#6ee7b7` | Distinctive, good contrast on dark bg, not overused |
-| Animated background blobs | Adds depth without distraction — removed in reduced-motion mode |
-
----
-
-## Dependencies
-
-| Package | Why |
-|---------|-----|
-| `next` | React framework with SSR, routing, and image optimization |
-| `react` + `react-dom` | Core React library |
-| `tailwindcss` | Utility-first CSS — fast to style, easy to customize |
-| `lucide-react` | Clean, consistent icon library (same icons used in VS Code) |
-
----
-
-## Troubleshooting
-
-**`npm install` fails:**
-Make sure you're on Node.js 18+. Run `node --version` to check.
-
-**Fonts not loading:**
-You need an internet connection during dev — fonts are loaded from Google Fonts.
-
-**Page is blank / errors in console:**
-Check that you're running `npm run dev` from inside the `portfolio/` folder.
+Manvi Ranjan, B.Tech Computer Science (Cybersecurity), UPES
