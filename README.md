@@ -4,7 +4,7 @@ A clean, modern, dark-themed personal portfolio built with **Next.js 14** and **
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 portfolio/
@@ -37,7 +37,7 @@ portfolio/
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 ### Prerequisites
 - Node.js 18 or higher installed ([download here](https://nodejs.org))
@@ -83,7 +83,7 @@ Vercel is made by the same team as Next.js — deploying is essentially one clic
 4. Vercel auto-detects Next.js — click **Deploy**
 5. Your site will be live at `https://your-project-name.vercel.app` in ~2 minutes
 
-Every time you push to GitHub, Vercel automatically re-deploys. ✨
+Every time you push to GitHub, Vercel automatically re-deploys. 
 
 ### Option B: Via Vercel CLI
 
@@ -100,7 +100,7 @@ vercel
 
 ---
 
-## ✏️ Customization Guide
+## Customization Guide
 
 ### Change your name, email, links
 - **Name/intro:** `components/Hero.jsx` — edit the `<h1>` and `<p>` text
@@ -142,7 +142,7 @@ accent: "#6ee7b7",  // Change this to any color you like
 
 ---
 
-## 🎨 Design Decisions
+## Design Decisions
 
 | Choice | Reason |
 |--------|--------|
@@ -155,7 +155,7 @@ accent: "#6ee7b7",  // Change this to any color you like
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 | Package | Why |
 |---------|-----|
