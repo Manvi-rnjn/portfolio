@@ -166,7 +166,7 @@ accent: "#6ee7b7",  // Change this to any color you like
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 **`npm install` fails:**
 Make sure you're on Node.js 18+. Run `node --version` to check.
