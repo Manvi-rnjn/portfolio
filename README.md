@@ -71,7 +71,7 @@ npm run start   # Runs the compiled version at localhost:3000
 
 ---
 
-## ☁️ Deploying to Vercel (Free)
+## Deploying to Vercel (Free)
 
 Vercel is made by the same team as Next.js — deploying is essentially one click.
 
