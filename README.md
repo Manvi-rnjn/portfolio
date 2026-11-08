@@ -77,19 +77,6 @@ npm run start
 
 The site is deployed on Vercel from this repository. Every push to the main branch triggers a new deployment.
 
-## Roadmap
-
-- [x] Intro, scroll-driven simulation and desktop
-- [x] Full-page folder views with animated illustrations
-- [x] Skip intro button
-- [ ] Replace the RateGuard illustration with a single-scene version that is easier to read
-- [ ] Name and resume button shown on the desktop
-- [ ] Writeups folder with short notes on web security topics
-- [ ] Plain scrollable view for quick scanning
-- [ ] Social preview image for link sharing
-
-Tick items off as they are completed.
-
 ## Author
 
 Manvi Ranjan, B.Tech Computer Science (Cybersecurity), UPES
